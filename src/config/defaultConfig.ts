@@ -4,11 +4,12 @@ export const defaultConfig: DefaultConfig = {
     navBar: [
         {
             title: "Home",
-            href: "/home"
+            href: "/",
         },
         {
             title: "Projects",
-            href: "/project"
+            href: "/project",
+            disabled: true
         }
     ]
 }
