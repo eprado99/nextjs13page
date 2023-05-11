@@ -10,11 +10,11 @@ export default function Timeline({work}: TimelineProps){
     return (
         <ol className={"relative border-l border-black "}>
             {
-                work.map((item: WorkExperience) => {
+                work.map((item: WorkExperience, index) => {
                     var formattedStartDate = Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(item.startDate)
                     var formattedEndDate = Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(item.endDate)
                     return (
-                        <li className={"mb-10 ml-4"}>
+                        <li className={"mb-10 ml-4"} key={index}>
                             <div className={"absolute w-3 h-3 bg-black rounded-full mt-1.5 -left-1.5 border border-dark"}></div>
                             <time className="mb-1 text-sm font-normal leading-none text-gray-800">
                                 { formattedStartDate } - { formattedEndDate }
