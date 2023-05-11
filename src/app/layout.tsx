@@ -17,10 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} md:container mx-auto`}>
+      <body className={`${inter.className} md:container mx-auto h-screen`}>
         <Header items={defaultConfig.navBar}/>
         {children}
-        
       </body>
     </html>
   )
