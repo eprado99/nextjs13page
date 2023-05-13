@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { getSVGFiles } from "@/utils"
 import { SvgItem } from "@/types"
 
 interface ScrollingTechProps {
