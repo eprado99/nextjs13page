@@ -14,6 +14,14 @@ export type WorkExperience = {
     description: string
 }
 
+export type SvgItem = {
+    fileName: string
+    altText: string
+}
+
+export type SvgItemArray = {
+    svgItemArray: SvgItem[]
+}
 export type WorkExperienceArr = {
     workExperienceArr: WorkExperience[]
 }
@@ -21,3 +29,4 @@ export type WorkExperienceArr = {
 export type DefaultConfig = {
     navBar: NavItem[]
 }
+
