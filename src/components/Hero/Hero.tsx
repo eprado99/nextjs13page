@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function Hero() {
     return (
-      <main className="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
+      <main className="grid mx-2 md:mx-1 lg:mx-0 md:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
         <div className="py-6 md:order-1 hidden md:block">
           <Image
               src="/undraw_cat_epte.svg"

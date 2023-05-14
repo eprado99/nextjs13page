@@ -8,7 +8,7 @@ interface TimelineProps {
 }
 export default function Timeline({work}: TimelineProps){
     return (
-        <ol className={"relative border-l border-black "}>
+        <ol className={"mx-2 md:mx-1 lg:mx-0 relative border-l border-black "}>
             {
                 work.map((item: WorkExperience, index) => {
                     var formattedStartDate = Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(item.startDate)
