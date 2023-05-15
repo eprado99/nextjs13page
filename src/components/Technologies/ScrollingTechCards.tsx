@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { SvgItem } from "@/types"
+import Heading from "../UI/Heading/Heading"
 
 interface ScrollingTechProps {
     programmingSvgItems: SvgItem[]
@@ -11,6 +12,7 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
     return (
         <div className={""}>
             <article className="wrapper h-screen">
+            <Heading style={{marginTop: '2rem'}}>Programming Languages</Heading>
             <div className="logo">
                 <div className="logo__group">
                     {
@@ -50,7 +52,7 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     }
                 </div>
             </div>
-
+            <Heading style={{marginTop: '2rem'}}>Frameworks</Heading>
             <div className="logo logo--reverse">
                 <div className="logo__group">
                     {
@@ -86,7 +88,7 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     }
                 </div>
             </div>
-
+            <Heading style={{marginTop: '2rem'}}>Cloud</Heading>
             <div className="logo">
                 <div className="logo__group">
                     {
