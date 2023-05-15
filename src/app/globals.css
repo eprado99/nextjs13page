@@ -34,14 +34,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: papayawhip;
     --color-bg: navy;
     --color-bg-accent: #2626a0;
   }
-}
+} */
 
 .logo {
   display: flex;
@@ -129,4 +129,16 @@ body {
   height: 100%;
   display: grid;
   place-items: center;  
+}
+
+.cardContainer {
+  min-height: 500px;
+  height: 100%;
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+  background-position: center;
+  min-height: 288px;
 }

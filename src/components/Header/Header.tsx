@@ -21,7 +21,7 @@ export function Header({items}: HeaderProps) {
                         <Link
                             key={index}
                             href={item.disabled ? "#" : item.href}
-                            className={`text-gray-900 border-transparent flex-1 whitespace-nowrap border-b-2 mt-2 py-2 px-1 text-base font-medium ${pathname === item.href.split('/')[1] && "text-indigo-600 border-indigo-600 font-bold underline underline-offset-8"}`}
+                            className={`text-gray-900 border-transparent flex-1 whitespace-nowrap border-b-2 mt-2 py-2 px-2 text-base font-medium ${pathname === item.href.split('/')[1] && "text-indigo-600 border-indigo-600 font-bold underline underline-offset-8"}`}
                         >
                             {item.title}
                         </Link>
