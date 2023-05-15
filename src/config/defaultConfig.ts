@@ -9,8 +9,6 @@ export const defaultConfig: DefaultConfig = {
         {
             title: "Projects",
             href: "/project",
-            disabled: true,
-            hide: true
         }
     ]
 }

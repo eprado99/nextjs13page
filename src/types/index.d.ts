@@ -19,6 +19,12 @@ export type SvgItem = {
     altText: string
 }
 
+export type MdxProjectMetadata = {
+    title: string
+    description: string
+    slug: string
+}
+
 export type SvgItemArray = {
     svgItemArray: SvgItem[]
 }
