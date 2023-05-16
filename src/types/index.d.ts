@@ -23,6 +23,7 @@ export type MdxProjectMetadata = {
     title: string
     description: string
     slug: string
+    githubLink?: string
 }
 
 export type SvgItemArray = {

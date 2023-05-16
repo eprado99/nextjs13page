@@ -17,7 +17,8 @@ export const getPostMetadata = (folderName: string) : MdxProjectMetadata[] => {
         return {
             title: frontMatter.data.title,
             description: frontMatter.data.description,
-            slug: fileName.replace(".mdx", "")
+            slug: fileName.replace(".mdx", ""),
+            githubLink: frontMatter.data.githubLink
         }
     })
     return posts
