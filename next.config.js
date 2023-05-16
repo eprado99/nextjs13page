@@ -12,3 +12,16 @@ const withMDX = require('@next/mdx')({
     },
 });
 module.exports = withMDX(nextConfig)
+
+module.exports = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname:'picsum.photos',
+                port: '',
+                pathname: '/500',
+            },
+        ],
+    },
+};
