@@ -12,9 +12,9 @@ export default function ProjectCard({project}:ProjectListProps) {
             <div className={"cardImageContainer mb-4"}>
                 <Image src="https://picsum.photos/500" alt="Image from picsum" width={288} height={288} className={"text-center rounded-2xl object-fill object-center shadow-2xl overflow-hidden"}/>
             </div>
-            <div className={"grid grid-rows-3 h-44 	"}>
+            <div className={"grid grid-rows-3 h-44"}>
                 <h3 className={"font-bold leading-normal mb-2 w-full"}>{project.title}</h3>
-                <p className={"leading-normal mt-1 min-h-24 w-18"}>{project.description}</p>
+                <p className={"leading-normal mt-1 min-h-24 w-18 row-span-2 overflow-auto"}>{project.description}</p>
                 <div className={"grid grid-cols-2 mt-4 w-full"}>
                    
                     <a href={project.githubLink ? project.githubLink : "#"} target="_blank" className={"flex gap-1"} style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>

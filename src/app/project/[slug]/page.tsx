@@ -14,11 +14,9 @@ export const generateStaticParams = async () => {
 }
 
 export default function Page({ params }: ProjectPageProps) {
-    const slug = params.slug
     const content = getPostContent("projects", params.slug)
     return (
-        <div>
-          <div>{slug}</div>
+        <div className={"mx-auto"}>
           <article className={"prose lg:prose-xl"}>
             <ReactMarkdown>{content}</ReactMarkdown>
           </article>

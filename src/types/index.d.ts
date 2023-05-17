@@ -12,6 +12,7 @@ export type WorkExperience = {
     startDate: Date
     endDate: Date
     description: string
+    technologies: string
 }
 
 export type SvgItem = {
