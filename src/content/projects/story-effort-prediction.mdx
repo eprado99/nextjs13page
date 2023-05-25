@@ -5,5 +5,28 @@ githubLink: https://github.com/eprado99/nextjs13page
 authors: eprado
 ---
 
-# Page title
+# Story Effort Prediction using Machine Learning
 
+## Project Summary
+A company currently uses the Scrum framework to manage its software development process. 
+This involves the use of user stories to describe the features of the software to be developed. 
+Each user story is assigned an effort value that represents the amount of work required to implement the story. 
+The effort value is determined by the development team during the sprint planning meeting which can be extremely time consuming.
+<br />
+With the use of datasets containing user stories and their corresponding effort values, we trained a machine learning model that can predict the effort of a story based on the story's titles, description & previous estimates.
+Additional to this, we created a web application that allows users to input a story's title and description and get a prediction of the effort required to implement the story, it also supports bulk uploading stories in .csv format getting a list of predictions back.
+Lastly, this web application allows users to see other user stories entered before and their predictions, this allows the team to have an idea previous to a meeting about a story.
+<br />
+This brings the following benefits:
+- It is fast
+- It does not require the presence of all team members.
+
+## Problem Statement
+While there is a variety of user story estimation techniques such as the Planning Poker method where Fibonacci sequence numbers (0, 1, 2, 3, 5, etc.) 
+are used to estimate the effort of a story where typically the Scrum Master describes the user story and team members choose a number and 
+the number that gets the most votes is the final estimation, the problem with this method is that it is time-consuming and requires the presence of all team members.
+<br />
+With the arise of Machine Learning and Natural Language Processing models getting better and better, 
+it is possible to train a model that can predict the effort of a story based on the story's description.
+Which is a perfect solution to this problem as it is fast and does not require the presence of all team members.
+Instead team members can use the model to predict the effort of a story and then discuss the prediction and agree on a final estimation.
