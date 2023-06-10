@@ -2,9 +2,8 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { MdxProjectMetadata } from "@/types"
-import { compileMDX } from "next-mdx-remote/rsc"
 
-const rootDirectory = path.join(process.cwd(), 'src', 'content')
+const rootDirectory = path.join(process.cwd(), 'content')
 
 // Pass the folder name as a parameter without / suffix
 export const getPostMetadata = (folderName: string) : MdxProjectMetadata[] => {
@@ -25,14 +24,14 @@ export const getPostMetadata = (folderName: string) : MdxProjectMetadata[] => {
     return posts
 }
 
-export const getRemoteMdx = async (folderName:string, slug: string) => {
-    const filePath = path.join(rootDirectory, folderName, `${slug}.mdx`)
-    const source = fs.readFileSync(filePath, "utf8")
-    const { content } = await compileMDX({
-        source: source
-    })
-    return content
-}
+// export const getRemoteMdx = async (folderName:string, slug: string) => {
+//     const filePath = path.join(rootDirectory, folderName, `${slug}.mdx`)
+//     const source = fs.readFileSync(filePath, "utf8")
+//     const { content } = await compileMDX({
+//         source: source
+//     })
+//     return content
+// }
 
 export const getPostContent = (folderName:string, slug: string) => {
     const filePath = path.join(rootDirectory, folderName, `${slug}.mdx`)
