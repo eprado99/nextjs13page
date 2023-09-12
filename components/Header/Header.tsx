@@ -14,7 +14,8 @@ export function Header({items}: HeaderProps) {
     
     return (
         <>
-            <header className={"w-full flex justify-start items-center"}>
+            <header className={"w-full flex justify-between items-center"}>
+                {/* image */}
                 <div className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur"}></div>
 
                 
@@ -22,27 +23,36 @@ export function Header({items}: HeaderProps) {
                     {/* <div className={"h-1 w-20 bg-gradient-to-r from-cyan-400 via-white-500 to-blue-500 rounded-full"}></div> */}
                     {/* inactive bar */}
                     {/* <div className={"h-1 w-20 rounded-full bg-gray-400/50"}></div> */}
-                <nav className={"flex gap-1.5"}>
+                    {/* <div className={`h-1 w-20 rounded-full ${pathname === item.href.split('/')[1] ? "bg-gradient-to-r from-cyan-400 via-white-500 to-blue-500" : "bg-gray-400/50" } `}> */}
+
+                <nav className={"flex justify-center gap-1.5 rounded-full border-2 bg-gray-400/50 h-[50%] w-[50%] px-3"}>
+                
+                
                     {
                         
                         items.map((item, index) => {
                             if (item.hide) return <></>
                             return (
-                                <div className={`h-1 w-20 rounded-full ${pathname === item.href.split('/')[1] ? "bg-gradient-to-r from-cyan-400 via-white-500 to-blue-500" : "bg-gray-400/50" } `}>
-                                    <Link
-                                        key={index}
-                                        href={item.disabled ? "#" : item.href}
-                                        className={`text-gray-900 border-transparent whitespace-nowrap border-b-2 mt-2 py-2 px-2 text-base font-medium ${pathname === item.href.split('/')[1] && "text-indigo-600 border-indigo-600 font-bold underline underline-offset-8"}`}
-                                    >
-                                        {item.title}
-                                    </Link>
-                                </div>
+                                    <div className={"group relative"} key={index}>
+                                        <span
+        className="absolute transition -bottom-px inset-x-0 h-px bg-gradient-to-r from-sky-500/0 via-sky-500/70 to-sky-500/0 opacity-0 group-hover:opacity-100"
+    ></span>
+                                    
+                                        <Link
+                                            
+                                            href={item.disabled ? "#" : item.href}
+                                            className={`text-gray-900 border-transparent whitespace-nowrap border-b-2 px-3 text-base font-medium ${pathname === item.href.split('/')[1] && "font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white-500 to-blue-500"} hover:font-bold hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:via-white-500 hover:to-blue-500`}
+                                        >
+                                                
+                                            {item.title}
+                                        </Link>
+                                    </div>
                             )
                         })
                     }
                 </nav>
                     
-
+                <div></div>
                 {/* <time>
                         {new Date().toLocaleDateString('en-us', {
                             year: 'numeric',
