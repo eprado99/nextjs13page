@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} md:container mx-auto m-2 min-h-screen flex flex-col`}>
+      <body className={`${inter.className} container mx-20 my-2 min-h-screen flex flex-col`}>
         <Header items={defaultConfig.navBar}/>
         {children}
         <Analytics />
