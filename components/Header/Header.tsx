@@ -25,7 +25,7 @@ export function Header({items}: HeaderProps) {
                     {/* <div className={"h-1 w-20 rounded-full bg-gray-400/50"}></div> */}
                     {/* <div className={`h-1 w-20 rounded-full ${pathname === item.href.split('/')[1] ? "bg-gradient-to-r from-cyan-400 via-white-500 to-blue-500" : "bg-gray-400/50" } `}> */}
 
-                <nav className={"flex justify-center gap-1.5 rounded-full border-2 bg-gray-400/50 h-[50%] w-[50%] px-3"}>
+                <nav className={"flex justify-center gap-1.5 rounded-full border-2 bg-gray-400/50 h-[50%]  w-[50%] px-3"}>
                 
                 
                     {

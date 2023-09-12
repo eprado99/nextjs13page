@@ -116,8 +116,8 @@ body {
 
 .svg-container {
   
-  width: 250px;
-  height: 250px;
+  width: 6.66rem;
+  height: 6.66rem;
   display: grid;
   place-items: center;
   width: var(--size); 
