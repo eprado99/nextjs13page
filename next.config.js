@@ -2,7 +2,6 @@
 const nextConfig = {
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     images: {
-        domains: [process.env.WP_DOMAIN],
         remotePatterns: [
             {
                 protocol: 'https',
