@@ -27,6 +27,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
   /* background: linear-gradient(
       to bottom,
       transparent,
