@@ -36,7 +36,7 @@ export default function Hero() {
               I have a
               <RoughNotation padding={[1, 1, 0, 1]} animationDuration={500} animationDelay={4} type="highlight" color={"yellow"} multiline={true}> B.S. in Computer Science & Technology </RoughNotation>
               from
-              <RoughNotation padding={[1, 1, 0, 1]} animationDuration={500} animationDelay={4.5} type="circle" color={"cyan"}> Tec de Monterrey </RoughNotation> 
+              <RoughNotation padding={[1, 1, 0, 1]} animationDuration={500} animationDelay={4.5} type="circle" color={"cyan"} multiline={true}> Tec de Monterrey </RoughNotation> 
               & I'm currently an 
               <RoughNotation padding={[1, 1, 0, 1]} animationDuration={500} animationDelay={5} type="highlight" color={"yellow"} multiline={true}> Applications Engineer </RoughNotation>at
               <RoughNotation padding={[1, 1, 0, 1]} animationDuration={500} animationDelay={5.5} type="circle" color={"cyan"}> Steelcase</RoughNotation>. 
