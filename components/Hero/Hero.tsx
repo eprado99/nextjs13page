@@ -22,7 +22,7 @@ export default function Hero() {
           <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight">
             Welcome to my blog/portfolio site.
           </h1>
-          <p className="text-lg mt-4 text-slate-600 max-w-xl">
+          <p className="text-lg mt-4 text-slate-600 max-w-xl font-kleeone">
             In here you are able to find all about my latest projects and
             blogs.<wbr /> The main focus of my blogs will be about technology but I
             might slip in one or two fitness/gym blogs. Graduating June 2023 from B.S. in Computer Science & Technology <AcademicCapIcon className="inline-block w-6 h-6 text-slate-500" />
