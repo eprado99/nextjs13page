@@ -1,0 +1,34 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+      "cpus": 4
+    },
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "npm install && npm run build",
+    "postCreateCommand": "",
+    "postAttachCommand": {
+      "server": "npm run dev"
+    },
+    "customizations": {
+      "codespaces": {
+        "openFiles": [
+          "app/page.tsx"
+        ]
+	},
+	"vscode": {
+		"extensions": [
+			"GitHub.copilot",
+			"GitHub.copilot-chat",
+			"ms-vscode.vscode-typescript-next",
+			"infeng.vscode-react-typescript"
+		]
+	}
+    },
+    "portsAttributes": {
+      "3000": {
+        "label": "Application",
+        "onAutoForward": "openPreview"
+      }
+    },
+    "forwardPorts": [3000]
+}

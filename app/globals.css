@@ -26,12 +26,14 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
     box-sizing: border-box;
 }
 
@@ -115,8 +117,8 @@ body {
 
 .svg-container {
   
-  width: 250px;
-  height: 250px;
+  width: 6.66rem;
+  height: 6.66rem;
   display: grid;
   place-items: center;
   width: var(--size); 

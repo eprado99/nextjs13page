@@ -1,11 +1,9 @@
 import { Header } from '@/components/Header/Header'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { klee_one, manrope, roboto_mono } from '@/utils/fonts';
 import { defaultConfig } from '@/config/defaultConfig'
 import { Analytics } from '@vercel/analytics/react';
 
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Emilio Prado ~ Software Engineer',
@@ -19,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} md:container mx-auto min-h-screen flex flex-col`}>
+      <body className={`${manrope.variable} ${klee_one.variable} ${roboto_mono.variable} container px-2 mx-auto my-2 min-h-screen flex flex-col`}>
         <Header items={defaultConfig.navBar}/>
         {children}
         <Analytics />
@@ -27,3 +25,4 @@ export default function RootLayout({
     </html>
   )
 }
+
