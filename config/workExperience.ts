@@ -13,7 +13,7 @@ export const workExperienceData: WorkExperienceArr = {
                           working directly with the client to deliver a high quality product.
                           Mainly performed tasks such as: Implementing new features, bug fixing, refactoring, unit testing and documentation.
                           `,
-            technologies: "React, .NET, Javascript, C#, SQL"
+            technologies: "React, .NET, JavaScript, C#, SQL"
         },
         {
             role: "DevOps Engineer Intern",
@@ -23,6 +23,15 @@ export const workExperienceData: WorkExperienceArr = {
             endDate: new Date('2023-01-27'),
             description: `Managed common cloud infrastructure maintenance tasks such as refactoring declarative code to avoid state clashes, fulfill compliance requirements, improve current processes and bug fix day to day encounters; Worked with a variety of cross-functional teams such as project managers, business teams and developers to build dashboards using telemetry data to get full visibility into critical workload systems, important business insights and visibility on client errors in order to act upon these events.`,
             technologies: "Azure, Docker, Kubernetes, Terraform, Azure Pipelines, Bash, Powershell"
+        },
+        {
+            role: "Applications Engineer",
+            company: "Steelcase",
+            location: "Monterrey, N.L.",
+            startDate: new Date('2023-07-25'),
+            endDate: "Present",
+            description: `Work as a fullstack developer on a set of ongoing digital transformation projects using WordPress, React and .NET. Daily activies include: Strategizing and implementing new features, providing support to end users and stakeholders, bug fixing, gathering requirements and documenting processes.`,
+            technologies: "React, .NET, WordPress, JavaScript, PHP, C#, SQL"
         }
     ]
 }
