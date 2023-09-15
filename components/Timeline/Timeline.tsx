@@ -13,7 +13,8 @@ export default function Timeline({work}: TimelineProps){
                 work.map((item: WorkExperience, index, arr) => {
 
                     var formattedStartDate = Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(item.startDate)
-                    var formattedEndDate = Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(item.endDate)
+                    // Spaghetti code to check if the end date is "Present" or not
+                    var formattedEndDate = item.endDate === "Present" ? "Present" : Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(item.endDate));
                     return (
                         <li className={`${index + 1 === arr.length ? "": "mb-10"} ml-4`} key={index}>
                             <div className={"absolute w-3 h-3 bg-black rounded-full mt-1.5 -left-1.5 border border-dark"}></div>
