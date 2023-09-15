@@ -20,7 +20,8 @@
 			"GitHub.copilot",
 			"GitHub.copilot-chat",
 			"ms-vscode.vscode-typescript-next",
-			"infeng.vscode-react-typescript"
+			"infeng.vscode-react-typescript",
+			"bradlc.vscode-tailwindcss"
 		]
 	}
     },
