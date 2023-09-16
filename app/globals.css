@@ -161,3 +161,22 @@ body {
   width: 100dvw;
   margin-left: calc(50% - 50dvw);
 }
+footer .border-top {
+  border-top: 1px solid hsla(0 0% 0%/.8);
+  border-radius: 0.2rem;
+  height: 1.2rem;
+  -webkit-mask-image: linear-gradient(#000 50%,transparent 0);
+  mask-image: linear-gradient(#000 50%,transparent 0);
+  position: relative;
+  width: 100%;
+}
+
+footer .border-bottom {
+  border: 1px solid hsla(0 0% 0%/.8);
+  border-radius: 0.2rem;
+  height: 1.2rem;
+  -webkit-mask-image: linear-gradient(transparent 50%,#000 0);
+  mask-image: linear-gradient(transparent 50%,#000 0);
+  position: relative;
+  width: 100%;
+}
