@@ -20,7 +20,7 @@ type Props = {
 
 export const generateStaticParams = async () => {
   const posts = await getBlogMetadata();
-  return posts?.map(p => ({
+  return posts!.map(p => ({
     slug: p.slug
   }))
 }
@@ -37,8 +37,10 @@ export default async function Page({params}: BlogPageParams){
         notFound();
     }
     return (
-        <div>
+        <div className={"my-4"}>
             Hello
+            <h1>{data.post.title}</h1>
+            <BlockRenderer blocks={data.post.blocks} />
             {JSON.stringify(data)}
         </div>
     )

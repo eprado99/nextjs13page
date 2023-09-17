@@ -1,4 +1,4 @@
-import { getPostContent, getPostMetadata } from '@/utils'
+import {  getPostMetadata } from '@/utils'
 import { allProjectPosts, ProjectPost } from 'contentlayer/generated'
 import { Metadata } from 'next';
 import { getMDXComponent } from "next-contentlayer/hooks";

@@ -49,7 +49,7 @@ export const getFontSize = (level: string) => {
 const Heading = ({textAlign, content, level}: HeadingProps) => {
     const tag = React.createElement(
         `h${level || 6}`, 
-        {className: `${getTextAlign(textAlign)} ${getFontSize(level)}`},
+        {className: `${getTextAlign(textAlign)} ${getFontSize(level)} text-black`},
         content
     );
     return tag;
