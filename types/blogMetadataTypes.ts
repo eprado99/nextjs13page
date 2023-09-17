@@ -26,7 +26,17 @@ export interface Node {
     uri: string
     slug: string
     date: string
+    excerpt: string
+    featuredImage: FeaturedImage
 }
+
+export interface FeaturedImage {
+    node: {
+        id: string
+        sourceUrl: string
+    }
+}
+  
 
 export interface Extensions {
     debug: Debug[]

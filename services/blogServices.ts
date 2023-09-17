@@ -15,15 +15,21 @@ const GetPostsByUriQuery = {
               ... on Post {
                 id
                 title
-                uri
                 slug
                 date
+                excerpt
+                featuredImage {
+                  node {
+                    id
+                    sourceUrl(size: THUMBNAIL)
+                  }
+                }
               }
             }
           }
         }
       }
-    } 
+    }
     `,
     variables: {
       "uri": "/"

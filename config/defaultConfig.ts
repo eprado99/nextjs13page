@@ -9,6 +9,10 @@ export const defaultConfig: DefaultConfig = {
         {
             title: "Projects",
             href: "/project",
+        },
+        {
+            title: "Blog",
+            href: "/blog",
         }
     ]
 }
