@@ -28,6 +28,14 @@ export interface Node {
     date: string
     excerpt: string
     featuredImage: FeaturedImage
+    tags: Tags
+}
+
+export interface Tags {
+    nodes: {
+        id: string
+        name: string
+    }[]
 }
 
 export interface FeaturedImage {

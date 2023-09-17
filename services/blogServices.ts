@@ -21,7 +21,13 @@ const GetPostsByUriQuery = {
                 featuredImage {
                   node {
                     id
-                    sourceUrl(size: THUMBNAIL)
+                    sourceUrl(size: MEDIUM)
+                  }
+                }
+                tags {
+                  nodes {
+                    id
+                    name
                   }
                 }
               }
@@ -61,10 +67,6 @@ export const getBlogMetadata = async () => {
         },
     });
     const { data }: RootMetadata = await res.json();
-
-    if(!data) {
-        return null;
-    }
 
     const posts = data.nodeByUri.contentNodes.nodes;
 
