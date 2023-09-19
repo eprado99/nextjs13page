@@ -1,5 +1,7 @@
 type IconProps = {
     name: string;
+    style: React.CSSProperties;
+    width?: number;
 };
   
 const PlaceholderIcon = () => {
@@ -10,14 +12,15 @@ const PlaceholderIcon = () => {
     );
 };
   
-export default async function Icon({ name }: IconProps) {
-    const src = `https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/${name}/default/48px.svg`;
+export default async function Icon({ name, style, width}: IconProps) {
+    const src = `https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/${name}/default/${width || 48}px.svg`;
 
     const response = await fetch(src);
 
     if (response.ok && response.status >= 200 && response.status < 300) {
         return (
             <div
+                style={style}
                 dangerouslySetInnerHTML={{
                     __html: await response.text(),
                 }}
