@@ -6,10 +6,10 @@ export const defaultConfig: DefaultConfig = {
             title: "Home",
             href: "/",
         },
-        {
-            title: "Projects",
-            href: "/project",
-        },
+        // {
+        //     title: "Projects",
+        //     href: "/project",
+        // },
         {
             title: "Blog",
             href: "/blog",
