@@ -17,7 +17,7 @@ export function Header({items}: HeaderProps) {
             <header className={"w-full flex justify-between items-center"}>
                 {/* image */}
                 {/* <div className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur"}> */}
-                    <Image width={100} height={100} src={cloudinaryLoader("portfolio/Me/k1j7eudmyo8iimwcnjyh", 100, 80, true)} alt={"Image of the owner of this website"} className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur object-cover"}/>
+                    <Image width={100} height={100} src={cloudinaryLoader("portfolio/Mia/gjwys4bgjtsqtn21rorb", 100, 80, true)} alt={"Image of the owner of this website"} className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur object-cover"}/>
                 {/* </div> */}
 
                 
