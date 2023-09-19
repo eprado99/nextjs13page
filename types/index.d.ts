@@ -10,7 +10,7 @@ export type WorkExperience = {
     company: string
     location: string
     startDate: Date
-    endDate: Date
+    endDate: Date | string
     description: string
     technologies: string
 }

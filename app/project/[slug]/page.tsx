@@ -1,4 +1,4 @@
-import { getPostContent, getPostMetadata } from '@/utils'
+import {  getPostMetadata } from '@/utils'
 import { allProjectPosts, ProjectPost } from 'contentlayer/generated'
 import { Metadata } from 'next';
 import { getMDXComponent } from "next-contentlayer/hooks";
@@ -29,7 +29,7 @@ export const generateMetadata = ({ params }: Props): Metadata => {
 };
 
 export default function Page({ params }: ProjectPageProps) {
-    const post = allProjectPosts.find((post) => post._raw.flattenedPath === params.slug)
+    const post = allProjectPosts.find((post: any) => post._raw.flattenedPath === params.slug)
     if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
     let MDXContent;
     if (!post) {

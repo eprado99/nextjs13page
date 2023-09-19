@@ -4,19 +4,21 @@ import { NavItem } from "@/types"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import * as React from "react"
-
+import Image from "next/image"
+import cloudinaryLoader from "@/utils/cloudinaryLoader"
 interface HeaderProps {
     items: NavItem[]
 }
 export function Header({items}: HeaderProps) {
     const pathname = usePathname().split("/")[1];
-
     
     return (
         <>
             <header className={"w-full flex justify-between items-center"}>
                 {/* image */}
-                <div className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur"}></div>
+                {/* <div className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur"}> */}
+                    <Image width={100} height={100} src={cloudinaryLoader("portfolio/Me/k1j7eudmyo8iimwcnjyh", 100, 80, true)} alt={"Image of the owner of this website"} className={"h-8 w-8 rounded-full bg-white/80 p-1 shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-500/50 backdrop-blur object-cover"}/>
+                {/* </div> */}
 
                 
                     {/* active bar */}
@@ -25,7 +27,7 @@ export function Header({items}: HeaderProps) {
                     {/* <div className={"h-1 w-20 rounded-full bg-gray-400/50"}></div> */}
                     {/* <div className={`h-1 w-20 rounded-full ${pathname === item.href.split('/')[1] ? "bg-gradient-to-r from-cyan-400 via-white-500 to-blue-500" : "bg-gray-400/50" } `}> */}
 
-                <nav className={"flex justify-center gap-1.5 rounded-full border-2 bg-gray-400/50 h-[50%] px-3"}>
+                <nav className={"flex justify-center gap-1.5 rounded-full border-2 bg-neutral-100/60 h-[50%] px-3"}>
                 
                 
                     {
