@@ -1,9 +1,9 @@
 export interface RootPostSeo {
-    data: Data
+    data: SeoData
     extensions: Extensions
 }
 
-export interface Data {
+export interface SeoData {
     post: Post
 }
 
