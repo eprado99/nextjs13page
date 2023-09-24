@@ -27,7 +27,7 @@ export const getPostSeo = async (slug: string) => {
     });
     const { data }: RootPostSeo = await res.json();
 
-    const seo = data.post.seo;
+    const seo = data?.post.seo;
 
     return seo;
 }

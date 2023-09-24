@@ -31,7 +31,7 @@ export const generateStaticParams = async () => {
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
     const data: Seo = await getPostSeo(params.slug);
-    return { title: data?.title, description: data?.metaDesc };
+    return { title: data?.title || "", description: data?.metaDesc || "" };
 };
 
 
