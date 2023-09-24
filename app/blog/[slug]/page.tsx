@@ -7,9 +7,11 @@ import { Metadata } from 'next';
 import { getMDXComponent } from "next-contentlayer/hooks";
 import Link from 'next/link'
 import { getBlogMetadata, getBlogPost } from "@/services/blogServices";
-import { Data, RootContent } from "@/types/blogContentTypes";
+import { Data } from "@/types/blogContentTypes";
+import { Seo } from "@/types/seoMetadataTypes";
 import Heading from "@/components/UI/Heading/Heading";
 import Icon from "@/components/UI/Icon/Icon";
+import { getPostSeo } from "@/services/getSeo";
 interface BlogPageParams {
     params: { slug: string }
 }
@@ -28,8 +30,11 @@ export const generateStaticParams = async () => {
 }
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-    const data: Data | null = await getBlogPost(params.slug);
-    return { title: data?.post.title, description: "" };
+    const data: Seo = await getPostSeo(params.slug);
+    if(!data) {
+      return { title: "Prado's Blog", description: "Prado's Blog"}
+    }
+    return { title: data?.title || "", description: data?.metaDesc || "" };
 };
 
 
@@ -43,12 +48,12 @@ export default async function Page({params}: BlogPageParams){
             <div className={"bg-black h-[40vh] rounded-lg"}></div>
             <div className={"mt-[-32vh] md:mx-14"}>
               <div className={"grid grid-cols-2 gap-5 justify-between justify-items-center items-center mb-2"}>
-                <button className={"flex gap-2 p-3 text-white text-center md:bg-transparent rounded-3xl border-2 border-white"}>
+                <Link href={"/blog"} className={"flex gap-2 p-3 text-white text-center md:bg-transparent rounded-3xl border-2 border-white"}>
                   {/* @ts-expect-error Server Component */}
                   <Icon name="arrow_back" width={24} style={{ sm: { fill: "black" }, fill: "white"}}/>
                   <span className={"flex items-center justify-center"}>Go back</span>
                 
-                </button>
+                </Link>
                 <div className={""}></div>
               </div>
               <div className={"bg-white p-4 lg:mx-14 rounded-lg border-2 overflow-hidden h-[100vh] border-neutral-300/60"}>

@@ -6,12 +6,13 @@ import Footer from '@/components/Footer/Footer'
 import { workExperienceData } from '@/config/workExperience'
 import { programmingLanguagesSvg, frameworksSvg, cloudSvg } from '@/config/svgItems'
 import BlogList from '@/components/ServerComponents/BlogList'
+import HorizontalTimeline from '@/components/Timeline/HorizontalTimeline'
 
 export default async function Home() {
   return (
     <>
       <Hero />
-      <Timeline work={workExperienceData.workExperienceArr}/>
+      <HorizontalTimeline work={workExperienceData.workExperienceArr}/>
       <ScrollingTechCards programmingSvgItems={programmingLanguagesSvg.svgItemArray} frameworkSvgItems={frameworksSvg.svgItemArray} cloudSvgItems={cloudSvg.svgItemArray}/>
       <HorizontalScrollSection>
         {/* @ts-expect-error Server Component */}

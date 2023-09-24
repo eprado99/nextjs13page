@@ -14,7 +14,7 @@ const BlogCard = (post: Node) => {
             <div className={"grid grid-rows-3 h-[15rem]"}>
                 <h3 className={"font-bold leading-normal mb-2 w-full"}>{post.title}</h3>
                 <p className={"leading-normal min-h-30 w-18 row-span-2 overflow-auto"}>{cleanedText}</p>
-                <div className={"grid grid-cols-2 mt-4 w-full"}>
+                <div className={"grid grid-cols-2 mt-4 w-full items-center"}>
                     
                     {/* <a href={projectPost.githubLink ? projectPost.githubLink : "#"} target="_blank" className={"flex gap-1"} style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
                         <ArrowTopRightOnSquareIcon className={"w-6 h-6 justify-self-start self-center"} /> <p className={"self-center"}>Github Repo</p>
@@ -22,7 +22,7 @@ const BlogCard = (post: Node) => {
                     <div>{post.tags.nodes.map(
                         (tag, i) => {
                             return (
-                                <span key={i} className={"text-xs bg-[#272725] rounded-xl p-1 text-white font-bold"}>{tag.name}</span>
+                                <span key={i} className={"text-xs bg-cyan-600 rounded-xl px-4 py-2 text-white font-bold"}>{tag.name}</span>
                             )
                         }
                     )

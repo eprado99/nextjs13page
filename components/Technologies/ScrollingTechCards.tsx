@@ -7,10 +7,13 @@ interface ScrollingTechProps {
     frameworkSvgItems: SvgItem[]
     cloudSvgItems: SvgItem[]
 }
+
+const WIDTH = 175;
+const HEIGHT = 175;
 export default function ScrollingTechCards({programmingSvgItems, frameworkSvgItems, cloudSvgItems}: ScrollingTechProps) {
     
     return (
-        <div className={""}>
+        <div className={"h-[100vh]"}>
             <article className="wrapper h-screen">
             <Heading style={{marginTop: '2rem'}}>Programming Languages</Heading>
             <div className="logo">
@@ -18,12 +21,12 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     {
                         programmingSvgItems.map((item, idx) => {
                             return (
-                                <div className="svg-container" style={{ width: '250px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
+                                <div className="svg-container" style={{ width: `${WIDTH}px`, height: `${HEIGHT}px`, display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
                                     <Image
                                     src={item.fileName}
                                     alt={item.altText}
-                                    width={250}
-                                    height={250}
+                                    width={WIDTH}
+                                    height={HEIGHT}
                                     />
                                 </div>
                             )
@@ -36,12 +39,12 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     {
                         programmingSvgItems.map((item, idx) => {
                             return ( 
-                                <div className="svg-container" style={{ width: '250px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
+                                <div className="svg-container" style={{ width: `${WIDTH}px`, height: `${HEIGHT}px`, display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
                                     <Image
                                     src={item.fileName}
                                     alt={item.altText}
-                                    width={250}
-                                    height={250}
+                                    width={WIDTH}
+                                    height={HEIGHT}
                                     // fill
                                     // style={{ objectFit: "contain" }}
                                     //  
@@ -58,12 +61,12 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     {
                         frameworkSvgItems.map((item, idx) => {
                             return (
-                                <div className="svg-container" style={{ width: '250px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
+                                <div className="svg-container" style={{ width: `${WIDTH}px`, height: `${HEIGHT}px`, display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
                                     <Image
                                     src={item.fileName}
                                     alt={item.altText}
-                                    width={250}
-                                    height={250}
+                                    width={WIDTH}
+                                    height={HEIGHT}
                                     />
                                 </div>
                             )
@@ -75,12 +78,12 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     {
                         frameworkSvgItems.map((item, idx) => {
                             return (
-                                <div className="svg-container" style={{ width: '250px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
+                                <div className="svg-container" style={{ width: `${WIDTH}px`, height: `${HEIGHT}px`, display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
                                     <Image
                                     src={item.fileName}
                                     alt={item.altText}
-                                    width={250}
-                                    height={250}
+                                    width={WIDTH}
+                                    height={HEIGHT}
                                     />
                                 </div>
                             )
@@ -94,12 +97,12 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     {
                         cloudSvgItems.map((item, idx) => {
                             return (
-                                <div className="svg-container" style={{ width: '250px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
+                                <div className="svg-container" style={{ width: `${WIDTH}px`, height: `${HEIGHT}px`, display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
                                     <Image
                                     src={item.fileName}
                                     alt={item.altText}
-                                    width={250}
-                                    height={250}
+                                    width={WIDTH}
+                                    height={HEIGHT}
                                     />
                                 </div>
                             )
@@ -112,12 +115,12 @@ export default function ScrollingTechCards({programmingSvgItems, frameworkSvgIte
                     {
                         cloudSvgItems.map((item, idx) => {
                             return ( 
-                                <div className="svg-container" style={{ width: '250px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
+                                <div className="svg-container" style={{ width: `${WIDTH}px`, height: `${HEIGHT}px`, display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={idx}>
                                     <Image
                                     src={item.fileName}
                                     alt={item.altText}
-                                    width={250}
-                                    height={250}
+                                    width={WIDTH}
+                                    height={HEIGHT}
                                     // fill
                                     // style={{ objectFit: "contain" }}
                                     //  
