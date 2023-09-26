@@ -19,7 +19,7 @@ export default function HorizontalTimeline({work}: TimelineProps){
 
     
     return (
-        <div className={"timeline-expanded-container inverse h-[100vh] flex items-center justify-center"}>
+        <div className={"timeline-expanded-container inverse h-full md:h-[100vh] flex items-center justify-center"}>
             <div className={"timeline-card-container"} onMouseMove={handleMouseMove}>
                 {
                     work.map((item: WorkExperience, index, arr) => {
