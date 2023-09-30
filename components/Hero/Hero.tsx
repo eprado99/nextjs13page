@@ -6,7 +6,6 @@ import Image from 'next/image'
 
 import { AcademicCapIcon } from '@heroicons/react/24/solid'
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation"
-import { Source_Sans_3 } from "next/font/google"
 
 export default function Hero() {
     return (
