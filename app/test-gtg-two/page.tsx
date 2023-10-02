@@ -1,0 +1,12 @@
+import Heading from "@/components/UI/Heading/Heading";
+import YoutubePlayer from "@/components/YoutubePlayer/YoutubePlayer";
+
+export default function Page(){
+
+    return (
+        <div className={"my-4"}>
+            <Heading style={{marginBottom: '1rem'}}>Test-gtg-two</Heading>
+            <YoutubePlayer videoId={"1fueZCTYkpA"} title={"Test-gtg-two"} />
+        </div>
+    )
+}
