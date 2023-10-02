@@ -43,9 +43,9 @@ export default function TimelineCard({item, index, mouseX, mouseY}: TimelineCard
                 <time className="mb-1 text-sm font-normal leading-none">
                     { formattedStartDate } - { formattedEndDate }
                 </time>
-                <h3 className="text-lg font-semibold">{ item.role } @ {item.company}</h3>
-                <p className="mb-4 text-base font-normal">{item.description}</p>
-                <p className="text-base font-normal">Technologies used: {item.technologies}</p>
+                <h3 className="text-base font-semibold">{ item.role } @ {item.company}</h3>
+                <p className="mb-2 text-base font-normal">{item.shortDescription}</p>
+                <p className="text-sm md:text-base font-normal">Technologies used: {item.technologies}</p>
             </div>
         </div>
     )

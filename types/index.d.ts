@@ -12,6 +12,7 @@ export type WorkExperience = {
     startDate: Date
     endDate: Date | string
     description: string
+    shortDescription: string
     technologies: string
 }
 
