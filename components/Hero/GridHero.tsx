@@ -21,7 +21,7 @@ const GridHero = () => {
                     Welcome to my personal site!
                 </h1>
             </div>
-            <div className="border-2 border-black text-sm md:text-4xl order-5 md:order-none rounded-lg font-kleeone skew-y-6">She's playful, loving and a heavy eater.</div>
+            <div className="border-2 border-black text-sm md:text-4xl order-5 md:order-none rounded-lg font-kleeone skew-y-6">She&#39;s playful, loving and a heavy eater.</div>
             <div className="hidden md:block border-2 border-black row-span-3 rounded-lg relative">
                 {/* To make image responsive, pass width as needed to cloudinary, assign relative to parent element, add fill property to Image and style with w-full and h-auto */}
                 <Image 
