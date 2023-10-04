@@ -56,6 +56,8 @@ export default async function Page({params}: BlogPageParams){
               <div className={"bg-white p-4 lg:mx-14 rounded-lg border-2 overflow-hidden h-[100vh] border-neutral-300/60"}>
                 <Heading style={{ marginBottom: '1rem', textAlign: 'center' }}>{data.post.title}</Heading>
                 <BlockRenderer blocks={data.post.blocks} />
+                <Link href="test-gtg-one" >Test link for yt video 1</Link>
+                <Link href="test-gtg-two" >Test link for yt video 2</Link>
               </div>
             </div>
         </div>
