@@ -91,10 +91,10 @@ const GridHero = () => {
             <div className={"hidden border-2 border-black rounded-lg md:col-span-2 md:flex md:items-center md:justify-center"}>
                 
             </div>
-            <div className="hidden border-2 border-black bg-black rounded-lg md:grid md:grid-rows-2 md:grid-cols-4">
-                <div className={"rounded-lg row-start-1 row-end-3 col-start-1 col-end-4"}>1</div>
+            <div className="hidden bg-black rounded-lg md:grid md:grid-rows-2 md:grid-cols-4 relative">
+                <div className={"rounded-lg row-start-1 row-end-3 col-start-1 col-end-4 about-info"}>1</div>
                 <div className={"rounded-lg"}>3</div>
-                <div className={"rounded-lg bg-white col-start-4 col-end-5 row-start-1 row-end-2 flex items-center justify-center"}>
+                <div className={"bg-white border-white col-start-4 col-end-5 row-start-1 row-end-2 flex items-center justify-center"} style={{ boxShadow: "0 -0.3rem 0 white, 0.3rem 0 0 white"}}>
                     <div className={"rounded-full bg-black w-12 h-12"}></div>
                 </div>
 

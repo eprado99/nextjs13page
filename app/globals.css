@@ -330,6 +330,30 @@ footer .border-bottom {
   box-shadow: 0 0.5rem 1rem -0.25rem rgba(0, 0, 0, 0.5);
 }
 
+.about-info::after,
+.about-info::before {
+  content: "";
+  
+  position: absolute;
+  width: var(--_size, 1rem);
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    transparent var(--_size, 1rem),
+    var(--_corner-color, red) calc(var(--_size, 1rem) + 1px)
+  );
+  rotate: -90deg;
+}
+
+.about-info::before {
+  --_size: 10rem;
+  --_corner-color: red;
+  top: 0;
+  left: 0;
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+
+}
+
 @media (max-width: 768px) { 
   .timeline-card-container {
     margin-top: 10px;
