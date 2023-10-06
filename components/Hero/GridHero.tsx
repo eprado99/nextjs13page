@@ -95,8 +95,8 @@ const GridHero = () => {
             {/* md:grid md:grid-rows-2 md:grid-cols-4 */}
             <div className="about hidden bg-black rounded-lg relative">
                 {/* row-start-1 row-end-3 col-start-1 col-end-4 */}
-                <div className={"rounded-lg about-info"}></div>
-                <div className={"rounded-lg about-empty"}>3</div>
+                <div className={"rounded-lg about-info text-white m-2"}>Learn more about me!</div>
+                <div className={"rounded-lg about-empty"}></div>
                 <div className={"about-button bg-white col-start-4 col-end-5 row-start-1 row-end-2 flex items-center justify-center"} style={{ boxShadow: "0 -0.3rem 0 white, 0.3rem 0 0 white"}}>
                     <div className={"rounded-full bg-black w-10 h-10 2xl:w-12 2xl:h-12 flex items-center justify-center"}>
                         {/* @ts-expect-error Server Component */}
