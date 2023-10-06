@@ -391,6 +391,28 @@ footer .border-bottom {
   rotate: 90deg;
 }
 
+.modern-card-scrollable-section::-webkit-scrollbar {
+  width: 3px;
+}
+
+.modern-card-scrollable-section::-webkit-scrollbar-track {
+  background: #E3E3E3;
+}
+
+.modern-card-scrollable-section::-webkit-scrollbar-button {
+  display: none;
+}
+
+.modern-card-scrollable-section::-webkit-scrollbar-thumb:hover {
+  background: #111111;
+}
+
+.modern-card-scrollable-section::-webkit-scrollbar-thumb {
+  background: #191919;
+  border-radius: 6px;
+}
+
+
 @media (max-width: 768px) { 
   .timeline-card-container {
     margin-top: 10px;
