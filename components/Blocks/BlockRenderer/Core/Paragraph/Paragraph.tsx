@@ -5,7 +5,7 @@ type ParagraphProps = {
 const Paragraph = ({ content }: ParagraphProps) => {
     return (
         <div className={"prose prose-slate lg:prose-lg mx-auto"}>
-            <p>{ content }</p>
+            <p dangerouslySetInnerHTML={{ __html: content }} />
         </div>
     );
 };
