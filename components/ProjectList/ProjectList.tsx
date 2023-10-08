@@ -1,8 +1,8 @@
 "use client"
 
 import { MdxProjectMetadata } from "@/types"
-import ProjectCard from "../UI/ProjectCard/ProjectCard"
 import { allProjectPosts } from 'contentlayer/generated'
+import ProjectCard from "../UI/ProjectCard/ProjectCard"
 
 interface ProjectListProps {
     projectMetadataArr: MdxProjectMetadata[]
