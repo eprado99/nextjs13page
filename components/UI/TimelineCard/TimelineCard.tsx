@@ -1,5 +1,6 @@
-import { WorkExperience } from "@/types";
 import React, { useEffect } from "react";
+
+import { WorkExperience } from "@/types";
 
 interface TimelineCardProps {
     item: WorkExperience,
@@ -31,7 +32,6 @@ export default function TimelineCard({item, index, mouseX, mouseY}: TimelineCard
     }, [mouseX, mouseY])
 
     var formattedStartDate = Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(item.startDate)
-    // Spaghetti code to check if the end date is "Present" or not
     var formattedEndDate = item.endDate === "Present" ? "Present" : Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(item.endDate));
     return (
         <div 
