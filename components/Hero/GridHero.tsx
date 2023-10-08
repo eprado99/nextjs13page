@@ -76,7 +76,8 @@ const GridHero = () => {
                     <li>Web Development</li>
                     <li>CMS</li>
                     <li>Backend Development</li>
-                    <li>Service Integration</li>
+                    <li>AI Integration</li>
+                    <li>SEO</li>
                 </GridHeroMarquees>
             </div>
             <div className="border-2 border-black order-9 md:order-none row-span-2 rounded-lg relative">
@@ -104,10 +105,12 @@ const GridHero = () => {
 
             <div className="border-2 border-black order-8 md:order-none col-span-4 md:col-span-3 rounded-lg flex items-center justify-center">
                 <GridHeroMarquees>
-                    <li>Web Development</li>
-                    <li>CMS</li>
-                    <li>Backend Development</li>
-                    <li>Service Integration</li>
+
+                    <li>Business Analysis</li>
+                    <li>Project Management</li>
+                    <li>Software Development</li>
+                    <li>Responsive Design</li>
+                    <li>UI/UX</li>
                 </GridHeroMarquees>
             </div>
             
