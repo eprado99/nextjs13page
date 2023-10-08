@@ -134,6 +134,11 @@ body {
   place-items: center;  
 }
 
+.blogCardContainer {
+  min-height: 500px;
+  height: 100%;
+}
+
 .cardContainer {
   min-height: 500px;
   min-width: 500px;
