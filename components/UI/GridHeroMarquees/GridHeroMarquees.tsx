@@ -2,7 +2,11 @@
 
 import { useEffect } from "react";
 
-const GridHeroMarquees = () => {
+interface GridHeroMarqueesProps {
+    children?: React.ReactNode
+}
+
+const GridHeroMarquees = ({children}: GridHeroMarqueesProps) => {
     useEffect(() => {
         let scrollers: NodeListOf<HTMLElement>;
         if (typeof window !== 'undefined') {
@@ -30,10 +34,7 @@ const GridHeroMarquees = () => {
     return (
         <div className="scroller">
             <ul className="services-list scroller__inner">
-                <li>Web Development</li>
-                <li>CMS</li>
-                <li>Backend Development</li>
-                <li>Service Integration</li>
+                {children}
             </ul>
         </div>
     )

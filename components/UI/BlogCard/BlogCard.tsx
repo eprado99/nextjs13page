@@ -7,7 +7,7 @@ const BlogCard = (post: Node) => {
     const cleanedText = cleanExcerpt.replace(/&#(\d+);/g, (match, charCode) => String.fromCharCode(charCode));
     // const style = { paddingBottom: `min(200px, ${100 / (500 / 500)}%)` }
     return (
-        <div className={"block w-80 min-h-[20rem] bg-white rounded-3xl p-4 shadow-2xl cardContainer"}>
+        <div className={"block w-80 min-h-[20rem] bg-white rounded-3xl p-4 shadow-2xl blogCardContainer"}>
             <div className={"cardImageContainer mb-4"}>
                 <Image src={post.featuredImage ? post.featuredImage.node.sourceUrl : "https://picsum.photos/500"} alt="Image from picsum" fill className={"text-center rounded-2xl object-cover object-center shadow-2xl overflow-hidden"}/>
             </div>

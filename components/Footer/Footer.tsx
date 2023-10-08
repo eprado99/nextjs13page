@@ -1,9 +1,7 @@
-
 import Icon from "../UI/Icon/Icon";
 import Image from "next/image";
 
 const Footer = () => {
-
 
     return (
         <footer className={"h-[40vh] mt-5 mb-10"}>
@@ -15,8 +13,9 @@ const Footer = () => {
                 </h1>
                 <div>
                     <div className={"flex gap-2"}>
-                        {/* target="_blank" */}
-                        <a href={"https://www.linkedin.com/in/emilio-prado-10b019218/"}><Image src="/SVGs/media/LI-Logo.png" width={75} height={75} alt={"Linkedin Logo"} /></a>
+                        <a href={"https://www.linkedin.com/in/emilio-prado-10b019218/"} target="_blank">
+                            <Image src="/SVGs/media/LI-Logo.png" width={75} height={75} alt={"Linkedin Logo"} />
+                        </a>
                     </div>
                     <div className={"flex"}>
                     {/* @ts-expect-error Server Component */}
@@ -27,13 +26,17 @@ const Footer = () => {
                 <div></div>
                 <div>
                     <div className={"flex gap-2"}>
-                        <a href={"https://www.tiktok.com/@emilioprado99"}><Image src="/SVGs/media/TikTok-logo-RGB-Horizontal-Black.png" width={100} height={100} alt={"Linkedin Logo"} /></a>
-                        <a href={"https://www.instagram.com/emiliofprado/"}><Image src="/SVGs/media/Instagram_Glyph_Gradient.svg" width={25} height={25} alt={"Linkedin Logo"} /></a>
+                        <a href={"https://www.tiktok.com/@emilioprado99"}>
+                            <Image src="/SVGs/media/TikTok-logo-RGB-Horizontal-Black.png" width={100} height={100} alt={"Linkedin Logo"} />
+                        </a>
+                        <a href={"https://www.instagram.com/emiliofprado/"}>
+                            <Image src="/SVGs/media/Instagram_Glyph_Gradient.svg" width={25} height={25} alt={"Linkedin Logo"} />
+                        </a>
                     </div>
                     <div className={"flex"}>
-                    {/* @ts-expect-error Server Component */}
-                    <Icon name="switch_access_shortcut" />
-                    <p className={"font-manrope text-xs justify-self-end self-end"}>Or more about me personally!</p>
+                        {/* @ts-expect-error Server Component */}
+                        <Icon name="switch_access_shortcut" />
+                        <p className={"font-manrope text-xs justify-self-end self-end"}>Or more about me personally!</p>
                     </div>
                 </div>
                 

@@ -12,7 +12,7 @@ import GridHero from '@/components/Hero/GridHero'
 export default async function Home() {
   return (
     <>
-      {/* <GridHero /> */}
+      <GridHero />
       <Hero />
       <HorizontalTimeline work={workExperienceData.workExperienceArr}/>
       <ScrollingTechCards programmingSvgItems={programmingLanguagesSvg.svgItemArray} frameworkSvgItems={frameworksSvg.svgItemArray} cloudSvgItems={cloudSvg.svgItemArray}/>

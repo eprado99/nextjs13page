@@ -41,7 +41,7 @@ export default async function Page({params}: BlogPageParams){
         notFound();
     }
     return (
-        <div className={"my-4 mx-2 md:mx-12 font-mono"}>
+        <div className={"mt-4 mx-2 md:mx-12 h-screen font-mono"}>
             <div className={"bg-black h-[40vh] rounded-lg"}></div>
             <div className={"mt-[-32vh] md:mx-14"}>
               <div className={"grid grid-cols-2 gap-5 justify-between justify-items-center items-center mb-2"}>
@@ -53,11 +53,11 @@ export default async function Page({params}: BlogPageParams){
                 </Link>
                 <div className={""}></div>
               </div>
-              <div className={"bg-white p-4 lg:mx-14 rounded-lg border-2 overflow-hidden h-[100vh] border-neutral-300/60"}>
+              <div className={"bg-white p-4 overflow-hidden rounded-lg border-2 h-[80vh] border-neutral-300/60"}>
                 <Heading style={{ marginBottom: '1rem', textAlign: 'center' }}>{data.post.title}</Heading>
-                <BlockRenderer blocks={data.post.blocks} />
-                <Link href="test-gtg-one" >Test link for yt video 1</Link>
-                <Link href="test-gtg-two" >Test link for yt video 2</Link>
+                <div className={"modern-card-scrollable-section overflow-y-auto h-4/5"}>
+                  <BlockRenderer blocks={data.post.blocks} />
+                </div>
               </div>
             </div>
         </div>
