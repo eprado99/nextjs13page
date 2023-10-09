@@ -1,15 +1,18 @@
 import ProjectList from "@/components/ProjectList/ProjectList";
 import Heading from "@/components/UI/Heading/Heading";
-import { MdxProjectMetadata } from "@/types";
-import { getPostMetadata } from "@/utils";
+import { getProjects } from "@/services/projectServices";
 
-export default function Page() {
 
-    const metadata: MdxProjectMetadata[] = getPostMetadata("projects");
+export default async function Page() {
+    const projectMetadata = await getProjects();
+    const data = projectMetadata?.projects.nodes
+    
     return (
         <div className={"my-4"}>
             <Heading style={{marginBottom: '1rem'}}>Projects</Heading>
-            <ProjectList projectMetadataArr={metadata} />
+            {
+                data && <ProjectList projectsArr={data} />
+            }
         </div>
     )
 }

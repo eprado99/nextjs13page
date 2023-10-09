@@ -1,5 +1,5 @@
 import { RootContent } from "@/types/blogContentTypes";
-import { Node, RootMetadata } from "@/types/blogMetadataTypes";
+import { RootMetadata } from "@/types/blogMetadataTypes";
 
 const GetPostsByUriQuery = {
     query: `query GetPostsByUri($uri: String!) {
