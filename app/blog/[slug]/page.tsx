@@ -1,17 +1,19 @@
-import { BlockRenderer } from "@/components/Blocks/BlockRenderer/BlockRenderer";
-import { getPageByUri } from "@/utils/getPageByUri";
-import { notFound } from "next/navigation";
-import { getPostContent, getPostMetadata } from '@/utils'
-import { allProjectPosts, ProjectPost } from 'contentlayer/generated'
 import { Metadata } from 'next';
-import { getMDXComponent } from "next-contentlayer/hooks";
 import Link from 'next/link'
+import { notFound } from "next/navigation";
+
+
 import { getBlogMetadata, getBlogPost } from "@/services/blogServices";
-import { Data } from "@/types/blogContentTypes";
+import { getPostSeo } from "@/services/getSeo";
+
 import { Seo } from "@/types/seoMetadataTypes";
+
+import { BlockRenderer } from "@/components/Blocks/BlockRenderer/BlockRenderer";
 import Heading from "@/components/UI/Heading/Heading";
 import Icon from "@/components/UI/Icon/Icon";
-import { getPostSeo } from "@/services/getSeo";
+
+export const revalidate = 86400 // 1 day
+
 interface BlogPageParams {
     params: { slug: string }
 }
@@ -49,7 +51,6 @@ export default async function Page({params}: BlogPageParams){
                   {/* @ts-expect-error Server Component */}
                   <Icon name="arrow_back" width={24} style={{ sm: { fill: "black" }, fill: "white"}}/>
                   <span className={"flex items-center justify-center"}>Go back</span>
-                
                 </Link>
                 <div className={""}></div>
               </div>

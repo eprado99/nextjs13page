@@ -5,6 +5,7 @@ import { getProjectBySlug, getProjects } from '@/services/projectServices';
 
 import Icon from '@/components/UI/Icon/Icon';
 import { BlockRenderer } from '@/components/Blocks/BlockRenderer/BlockRenderer';
+import { notFound } from 'next/navigation';
 
 interface ProjectPageProps {
     params: { slug: string }
@@ -14,6 +15,8 @@ type Props = {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export const revalidate = 86400 // 1 day
 
 export const generateStaticParams = async () => {
   const posts = await getProjects();
@@ -32,13 +35,13 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 export default async function Page({ params }: ProjectPageProps) {
     const cmsProjectPost = await getProjectBySlug(params.slug);
     if(cmsProjectPost === null){
-      throw new Error("Project not found");
+      notFound();
     }
 
     const { title, excerpt, blocks, projectDetails, programmingLanguages, appTypes } = cmsProjectPost?.project;
 
     if(projectDetails.hasDetails === false){
-      throw new Error("Project does not have details");
+      notFound();
     }
     
     return (

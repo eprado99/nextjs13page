@@ -2,6 +2,7 @@ import ProjectList from "@/components/ProjectList/ProjectList";
 import Heading from "@/components/UI/Heading/Heading";
 import { getProjects } from "@/services/projectServices";
 
+export const revalidate = 86400 // 1 day
 
 export default async function Page() {
     const projectMetadata = await getProjects();

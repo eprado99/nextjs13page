@@ -1,8 +1,8 @@
-import { BlockRenderer } from "@/components/Blocks/BlockRenderer/BlockRenderer";
 import BlogList from "@/components/BlogList/BlogList";
 import Heading from "@/components/UI/Heading/Heading";
 import { getBlogMetadata } from "@/services/blogServices";
-import { Node } from "@/types/blogMetadataTypes";
+
+export const revalidate = 86400 // 1 day
 
 export default async function Page({params}: any){
   const nodes = await getBlogMetadata();
