@@ -1,7 +1,5 @@
 "use client"
 
-import { MdxProjectMetadata } from "@/types"
-import { allProjectPosts } from 'contentlayer/generated'
 import ProjectCard from "../UI/ProjectCard/ProjectCard"
 import { Node } from "@/types/projectMetadataTypes"
 
