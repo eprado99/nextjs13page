@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
     images: {
         domains: ['res.cloudinary.com'],
         remotePatterns: [
@@ -21,5 +21,4 @@ const nextConfig = {
     },
 }
 
-const { withContentlayer } = require('next-contentlayer')
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig
