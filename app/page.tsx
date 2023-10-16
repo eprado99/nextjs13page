@@ -22,7 +22,7 @@ export default async function Home() {
       {/* </HorizontalScrollSection> */}
       {/* @ts-expect-error Server Component */}
       <ProjectList classNames={'expanded-container bg-black h-[100vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-center items-center px-10'}/>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
