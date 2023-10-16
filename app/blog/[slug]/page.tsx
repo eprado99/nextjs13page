@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link'
 import { notFound } from "next/navigation";
 
@@ -16,6 +16,7 @@ export const revalidate = 14400 // 4 hours
 
 interface BlogPageParams {
     params: { slug: string }
+    searchParams: { [key: string]: string | string[] | undefined };
 }
 
 
@@ -31,12 +32,15 @@ export const generateStaticParams = async () => {
   }))
 }
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-    const data: Seo = await getPostSeo(params.slug);
-    if(!data.title || !data.metaDesc){
+export const generateMetadata = async ({ params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const data: Seo | null = await getPostSeo(params.slug);
+    if(!data || !data.title || !data.metaDesc){
       return { title: "Prado's blog", description: "Prado's blog" };
     }
-    return { title: data?.title || "", description: data?.metaDesc || "Prado's blog" };
+    console.log("title: " + data.title, "description:" + data.metaDesc)
+    return { title: data.title, description: data.metaDesc };
 };
 
 
