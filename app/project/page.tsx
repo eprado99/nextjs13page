@@ -12,7 +12,7 @@ export default async function Page() {
         <div className={"my-4"}>
             <Heading style={{marginBottom: '1rem'}}>Projects</Heading>
             {
-                data && <ProjectList projectsArr={data} />
+                data && <ProjectList projectsArr={data}/>
             }
         </div>
     )

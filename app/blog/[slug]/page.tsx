@@ -12,7 +12,7 @@ import { BlockRenderer } from "@/components/Blocks/BlockRenderer/BlockRenderer";
 import Heading from "@/components/UI/Heading/Heading";
 import Icon from "@/components/UI/Icon/Icon";
 
-export const revalidate = 86400 // 1 day
+export const revalidate = 14400 // 4 hours
 
 interface BlogPageParams {
     params: { slug: string }

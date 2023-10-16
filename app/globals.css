@@ -117,11 +117,20 @@ body {
 }
 
 .cardContainer {
-  min-height: 500px;
-  min-width: 500px;
-  max-height: 500px;
-  max-width: 500px;
+  min-height: 31.25rem; /* 500px converted to rem */
+  min-width: 31.25rem; /* 500px converted to rem */
+  max-height: 31.25rem; /* 500px converted to rem */
+  max-width: 31.25rem; /* 500px converted to rem */
   height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 25rem;
+    max-height: 25rem;
+  }
 }
 
 .cardImageContainer {
