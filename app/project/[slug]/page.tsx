@@ -5,6 +5,7 @@ import { getProjectBySlug, getProjects } from '@/services/projectServices';
 
 import Icon from '@/components/UI/Icon/Icon';
 import { BlockRenderer } from '@/components/Blocks/BlockRenderer/BlockRenderer';
+import { notFound } from 'next/navigation';
 
 interface ProjectPageProps {
     params: { slug: string }
@@ -14,6 +15,8 @@ type Props = {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export const revalidate = 14400 // 4 hours
 
 export const generateStaticParams = async () => {
   const posts = await getProjects();
@@ -32,19 +35,19 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 export default async function Page({ params }: ProjectPageProps) {
     const cmsProjectPost = await getProjectBySlug(params.slug);
     if(cmsProjectPost === null){
-      throw new Error("Project not found");
+      notFound();
     }
 
     const { title, excerpt, blocks, projectDetails, programmingLanguages, appTypes } = cmsProjectPost?.project;
 
     if(projectDetails.hasDetails === false){
-      throw new Error("Project does not have details");
+      notFound();
     }
     
     return (
-      <div className="my-4 mx-2 md:mx-12 h-[90vh] flex font-mono">
-        <div className={"bg-black rounded-lg w-[33%] h-full flex flex-col gap-4 justify-center"}>
-          <div className={"flex"}>
+      <div className="my-4 mx-2 md:mx-12 h-[90vh] lg:flex font-mono">
+        <div className={"bg-black rounded-lg lg:w-[33%] h-[70vh] lg:h-full flex flex-col gap-4 justify-center"}>
+          <div className={"flex mt-2 lg:mt-0"}>
             <Link href={"/project"} className={"ml-2 place-self-start self-start flex gap-2 p-3 text-white text-center md:bg-transparent rounded-3xl border-2 border-white"}>
                 {/* @ts-expect-error Server Component */}
                 <Icon name="arrow_back" width={24} style={{ sm: { fill: "black" }, fill: "white"}}/>
@@ -75,7 +78,7 @@ export default async function Page({ params }: ProjectPageProps) {
             
           </div>
         </div>
-        <div className={"rounded-lg ml-[-2vh] w-[66%] border-2 bg-white border-neutral-300/60 h-[98%] self-center overflow-y-scroll"}>
+        <div className={"rounded-lg mt-[-4vh] w-[98%] mx-auto lg:mx-0 lg:ml-[-2vh] lg:mt-0 lg:w-[66%] border-2 bg-white border-neutral-300/60 h-[98%] self-center overflow-y-scroll"}>
           <article className={"prose lg:prose-xl mx-auto my-6"}>
             <BlockRenderer blocks={blocks} />
           </article>

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
     images: {
         domains: ['res.cloudinary.com'],
         remotePatterns: [
@@ -21,5 +21,7 @@ const nextConfig = {
     },
 }
 
-const { withContentlayer } = require('next-contentlayer')
-module.exports = withContentlayer(nextConfig)
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+})
+module.exports = withBundleAnalyzer(nextConfig);

@@ -4,6 +4,7 @@ import BlogCard from "../UI/BlogCard/BlogCard"
 interface BlogListProps {
     posts: Node[]
 }
+
 export default function BlogList({posts}: BlogListProps) {
     console.log(posts)
     return (

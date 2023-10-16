@@ -7,6 +7,7 @@ import TimelineCard from "../UI/TimelineCard/TimelineCard";
 interface TimelineProps {
     work: WorkExperience[]
 }
+
 export default function HorizontalTimeline({work}: TimelineProps){
 
     const [mouseX, setMouseX] = useState(0);
@@ -17,14 +18,11 @@ export default function HorizontalTimeline({work}: TimelineProps){
         setMouseY(e.nativeEvent.clientY);
     };
 
-    
     return (
-        <div className={"timeline-expanded-container inverse h-full md:h-[100vh] flex items-center justify-center"}>
-            <div className={"timeline-card-container"} onMouseMove={handleMouseMove}>
+        <div className={"timeline-expanded-container inverse xl:h-[100vh] 2xl:h-[70vh] flex items-center justify-center"}>
+            <div className={"timeline-card-container flex items-center justify-center"} onMouseMove={handleMouseMove} >
                 {
-                    work.map((item: WorkExperience, index, arr) => {
-
-                        
+                    work.map((item: WorkExperience, index) => {
                         return (
                             <TimelineCard key={index} item={item} index={index} mouseX={mouseX} mouseY={mouseY} />
                         )
