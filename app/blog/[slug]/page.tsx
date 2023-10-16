@@ -32,16 +32,16 @@ export const generateStaticParams = async () => {
   }))
 }
 
-export const generateMetadata = async ({ params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> => {
-    const data: Seo | null = await getPostSeo(params.slug);
-    if(!data || !data.title || !data.metaDesc){
-      return { title: "Prado's blog", description: "Prado's blog" };
-    }
-    console.log("title: " + data.title, "description:" + data.metaDesc)
-    return { title: data.title, description: data.metaDesc };
-};
+// export const generateMetadata = async ({ params, searchParams }: Props,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> => {
+//     const data: Seo | null = await getPostSeo(params.slug);
+//     if(!data || !data.title || !data.metaDesc){
+//       return { title: "Prado's blog", description: "Prado's blog" };
+//     }
+//     console.log("title: " + data.title, "description:" + data.metaDesc)
+//     return { title: data.title, description: data.metaDesc };
+// };
 
 
 export default async function Page({params}: BlogPageParams){
