@@ -62,7 +62,7 @@ export default async function Page({params}: BlogPageParams){
                 <div className={""}></div>
               </div>
               <div className={"bg-white p-4 overflow-hidden rounded-lg border-2 h-[80vh] border-neutral-300/60"}>
-                <Heading style={{ marginBottom: '1rem', textAlign: 'center' }}>{data.post.title}</Heading>
+                <Heading style={{ marginBottom: '1rem', textAlign: 'center' }}>{data.post?.title || ""}</Heading>
                 <div className={"modern-card-scrollable-section overflow-y-auto h-4/5"}>
                   <BlockRenderer blocks={data.post.blocks} />
                 </div>
