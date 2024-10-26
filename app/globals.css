@@ -146,15 +146,12 @@ body {
 }
 
 .timeline-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 16px;
+  margin: 5rem auto;
   max-width: 80vw;
-  max-height: 100%; 
+  max-height: 100%;
 }
 
 .timeline-card-container:hover > .timeline-card::after {
@@ -162,12 +159,22 @@ body {
 }
 
 .timeline-card {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #ffffff;
+  border: 0px solid transparent;
   border-radius: 10px;
   cursor: pointer;
   height: 380px;
   width: 420px;
   position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+  0 0 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  transition: transform 0.7s ease-in-out;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 
+              0 0 30px rgba(105, 180, 234, 0.6);
 }
 
 .timeline-card:hover::before {
@@ -190,7 +197,7 @@ body {
 .timeline-card::before {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.02), 
     transparent 40%
   );
   z-index: 3;
@@ -200,20 +207,20 @@ body {
   background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y), 
     rgba(255, 255, 255, 0.1),
-    rgba(99, 179, 237, 0.5) 40%,
+    rgba(80, 176, 245, 0.872) 40%,
     transparent 20%
   );
   z-index: 1;
 }
 
 .timeline-card > .timeline-card-content {
-  background-color: rgb(23, 23, 23);
+  background-color: #ffffff;
   border-radius: inherit;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   inset: 1px;
-  padding: 10px;
+  padding: 20px;
   position: absolute;
   z-index: 2;
 }

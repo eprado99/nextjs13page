@@ -1,93 +1,115 @@
-import { RootProjectContent } from "@/types/projectContentTypes";
-import { Root } from "@/types/projectMetadataTypes";
-
-const getProjectsQuery = { 
-  query: `query GetProjects {
-    projects {
-      nodes {
-        id
-        title
-        excerpt
-        slug
-        programmingLanguages {
-          nodes {
-            name
-          }
-        }
-        appTypes {
-          nodes {
-            name
-          }
-        }
-        projectDetails {
-          hasDetails
-          githubRepo
-        }
-      }
-    }
-  }`
+interface Sys {
+  id: string;
 }
 
-const getProjectBySlugQuery = (slug: string): { query: string, variables: { id: string } } => {
-  return {
-    query: `query GetProjectBySlug($id: ID = "") {
-      project(id: $id, idType: SLUG) {
-        id
-        title
-        excerpt
-        blocks
-        projectDetails {
-          hasDetails
-          githubRepo
-          projectGallery {
-            blocks
-          }
-        }
-        programmingLanguages {
-          nodes {
-            name
-          }
-        }
-        appTypes {
-          nodes {
-            name
-          }
-        }
-      }
-    }`,
-    variables: {
-      "id": slug
-    }
-  }
+interface Image {
+  title: string;
+  url: string;
+  width: number;
+  height: number;
 }
 
-export const getProjects = async () => {
-    const res = await fetch(`${process.env.WP_GRAPHQL_URL}`, {
-        method: "POST",
-        body: JSON.stringify(getProjectsQuery),
-        headers: {
-          "Content-Type": "application/json",
-        },
-    });
-    const { data }: Root = await res.json();
-    console.log(data);
-    if(!data) {
-        return null;
-    }
-    return data;
+interface Description {
+  json: any; // Adjust this type based on the actual structure of the JSON if needed
 }
 
-export const getProjectBySlug = async (slug: string) => {
-    const res = await fetch(`${process.env.WP_GRAPHQL_URL}`, {
-        method: "POST",
-        body: JSON.stringify(getProjectBySlugQuery(slug)),
-        headers: {
-          "Content-Type": "application/json",
-        },
-    });
-    const { data }: RootProjectContent = await res.json();
-    if(!data) {
-        return null;
+export interface Project {
+  sys: Sys;
+  title: string;
+  description: Description;
+  isReady?: boolean;
+  mainImage: Image;
+  githubUrl: string;
+  slug: string;
+}
+
+interface ProjectCollection {
+  items: Project[];
+}
+
+async function fetchGraphQL(query: string, preview = false): Promise<any> {
+  return fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${
+          preview
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : process.env.CONTENTFUL_ACCESS_TOKEN
+        }`,
+      },
+      body: JSON.stringify({ query }),
     }
-    return data;
+  ).then((response) => response.json());
+}
+
+function extractProjectEntries(fetchResponse: any): Project[] {
+  return fetchResponse?.data?.projectCollection?.items;
+}
+
+export async function getAllProjects(
+  limit = 3,
+  isDraftMode = false
+): Promise<Project[]> {
+  const projects = await fetchGraphQL(
+    `query {
+        projectCollection(order: sys_publishedAt_DESC, limit: ${limit}, preview: ${
+      isDraftMode ? "true" : "false"
+    }) {
+          items {
+            sys {
+              id
+            },
+            title,
+            description {
+              json
+            },
+            mainImage {
+              title,
+              url,
+              width,
+              height
+            },
+            githubUrl,
+            slug
+          }
+        }
+      }`,
+    isDraftMode
+  );
+  return extractProjectEntries(projects);
+}
+
+export async function getProject(
+  id: string,
+  isDraftMode = false
+): Promise<Project | null> {
+  const project = await fetchGraphQL(
+    `query {
+        project(id: "${id}", preview: ${
+      isDraftMode ? "true" : "false"
+    }) {
+          sys {
+            id
+          },
+          title,
+          description {
+            json
+          },
+          isReady,
+          mainImage {
+            title,
+            url,
+            width,
+            height
+          },
+          githubUrl,
+          slug
+        }
+      }`,
+    isDraftMode
+  );
+  return project?.data?.project ?? null;
 }

@@ -35,7 +35,7 @@ export default function TimelineCard({item, index, mouseX, mouseY}: TimelineCard
     var formattedEndDate = item.endDate === "Present" ? "Present" : Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(item.endDate));
     return (
         <div 
-            className={`timeline-card`} 
+            className={`timeline-card  transition-transform transform hover:scale-105`}
             key={index} 
             ref={cardRef}
         >

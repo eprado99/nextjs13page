@@ -2,10 +2,6 @@ import { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link'
 import { notFound } from "next/navigation";
 
-
-import { getBlogMetadata, getBlogPost } from "@/services/blogServices";
-import { getPostSeo } from "@/services/getSeo";
-
 import { Seo } from "@/types/seoMetadataTypes";
 
 import { BlockRenderer } from "@/components/Blocks/BlockRenderer/BlockRenderer";
@@ -25,27 +21,27 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export const generateStaticParams = async () => {
-  const posts = await getBlogMetadata();
-  return posts!.map(p => ({
-    slug: p.slug
-  }))
-}
+// export const generateStaticParams = async () => {
+//   const posts = await getBlogMetadata();
+//   return posts!.map(p => ({
+//     slug: p.slug
+//   }))
+// }
 
-export const generateMetadata = async ({ params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> => {
-    const data: Seo | null = await getPostSeo(params.slug);
-    if(!data || !data.title || !data.metaDesc){
-      return { title: "Prado's blog", description: "Prado's blog" };
-    }
-    console.log("title: " + data.title, "description:" + data.metaDesc)
-    return { title: data.title, description: data.metaDesc };
-};
+// export const generateMetadata = async ({ params, searchParams }: Props,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> => {
+//     const data: Seo | null = await getPostSeo(params.slug);
+//     if(!data || !data.title || !data.metaDesc){
+//       return { title: "Prado's blog", description: "Prado's blog" };
+//     }
+//     console.log("title: " + data.title, "description:" + data.metaDesc)
+//     return { title: data.title, description: data.metaDesc };
+// };
 
 
 export default async function Page({params}: BlogPageParams){
-    const data = await getBlogPost(params.slug);
+    const data = null;
     if(!data){
         notFound();
     }
@@ -62,9 +58,9 @@ export default async function Page({params}: BlogPageParams){
                 <div className={""}></div>
               </div>
               <div className={"bg-white p-4 overflow-hidden rounded-lg border-2 h-[80vh] border-neutral-300/60"}>
-                <Heading style={{ marginBottom: '1rem', textAlign: 'center' }}>{data.post?.title || ""}</Heading>
+                <Heading style={{ marginBottom: '1rem', textAlign: 'center' }}>{""}</Heading>
                 <div className={"modern-card-scrollable-section overflow-y-auto h-4/5"}>
-                  <BlockRenderer blocks={data.post?.blocks} />
+                  {/* <BlockRenderer blocks={data.post?.blocks} /> */}
                 </div>
               </div>
             </div>

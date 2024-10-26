@@ -38,7 +38,7 @@ export default function RootLayout({
           gtag('config', '${GA_ID}');
         `}
       </Script>
-      <body className={`${manrope.variable} ${klee_one.variable} ${roboto_mono.variable} container px-2 mx-auto my-2 min-h-screen flex flex-col`}>
+      <body className={`${manrope.variable} ${klee_one.variable} ${roboto_mono.variable} container mx-auto my-2 min-h-screen flex flex-col`}>
         <Header items={defaultConfig.navBar}/>
         {children}
         <Analytics />
