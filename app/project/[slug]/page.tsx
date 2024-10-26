@@ -20,10 +20,12 @@ export const revalidate = 14400 // 4 hours
 
 export async function generateStaticParams() {
   const allProjects = await getAllProjects();
-
-  return allProjects.map((project: Project) => ({
-    slug: project.slug,
-  }));
+  console.log(allProjects);
+  return allProjects
+    .filter((project: Project) => project.slug !== null)
+    .map((project: Project) => ({
+      slug: project.slug,
+    }));
 }
 
 // export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
