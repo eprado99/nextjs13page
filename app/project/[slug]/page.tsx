@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link'
 
-import { getProjectBySlug, getProjects } from '@/services/projectServices';
+import { getAllProjects, getProject, Project } from '@/services/projectServices';
 
 import Icon from '@/components/UI/Icon/Icon';
-import { BlockRenderer } from '@/components/Blocks/BlockRenderer/BlockRenderer';
 import { notFound } from 'next/navigation';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 interface ProjectPageProps {
     params: { slug: string }
@@ -18,29 +18,29 @@ type Props = {
 
 export const revalidate = 14400 // 4 hours
 
-export const generateStaticParams = async () => {
-  const posts = await getProjects();
-  const projectNodes = posts?.projects?.nodes;
-  return projectNodes!.map(p => ({
-    slug: p.slug
-  }))
+export async function generateStaticParams() {
+  const allProjects = await getAllProjects();
+
+  return allProjects.map((project: Project) => ({
+    slug: project.slug,
+  }));
 }
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-  const post = await getProjects()
-  const cmsPost = post?.projects?.nodes?.find(p => p.slug === params.slug);
-  return { title: cmsPost?.title, description: cmsPost?.excerpt };
-};
+// export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+//   const post = await getProjects()
+//   const cmsPost = post?.projects?.nodes?.find(p => p.slug === params.slug);
+//   return { title: cmsPost?.title, description: cmsPost?.excerpt };
+// };
 
 export default async function Page({ params }: ProjectPageProps) {
-    const cmsProjectPost = await getProjectBySlug(params.slug);
+    const cmsProjectPost = await getProject(params.slug);
     if(cmsProjectPost === null){
       notFound();
     }
 
-    const { title, excerpt, blocks, projectDetails, programmingLanguages, appTypes } = cmsProjectPost?.project;
+    const { title, description, githubUrl, mainImage, isReady } = cmsProjectPost;
 
-    if(projectDetails.hasDetails === false){
+    if(cmsProjectPost.isReady === false){
       notFound();
     }
     
@@ -59,19 +59,23 @@ export default async function Page({ params }: ProjectPageProps) {
               <h1 className={"text-[2.5rem] font-bold leading-[3rem] tracking-tight text-black"}>{title}</h1>
                 <div className={"flex gap-2 text-sm text-gray-500 justify-self-start self-center"}>
                     {
+                        /*
                         programmingLanguages.nodes.map((language, index) => {
                             return <p key={index}>{language.name}</p>
                         })
+                        */
                     }
                 </div>
                 <div className={"flex gap-2 text-sm text-white justify-self-start self-center"}>
                     {
+                        /*
                         appTypes.nodes.map((appType, index) => {
                             return <p className={"bg-black rounded-full px-2 py-1"} key={index}>{appType.name}</p>
                         })
+                        */
                     }
                 </div>
-                <div className={"font-medium tracking-normal leading-relaxed text-left text-zinc-800"} dangerouslySetInnerHTML={{ __html: excerpt }} />
+                <div className={"font-medium tracking-normal leading-relaxed text-left text-zinc-800"} dangerouslySetInnerHTML={{ __html: "WIP" }} />
             </div>
           </div>
           <div className={"h-[40vh] w-[80%] mb-2 rounded-lg"}>
@@ -80,7 +84,7 @@ export default async function Page({ params }: ProjectPageProps) {
         </div>
         <div className={"rounded-lg mt-[-4vh] w-[98%] mx-auto lg:mx-0 lg:ml-[-2vh] lg:mt-0 lg:w-[66%] border-2 bg-white border-neutral-300/60 h-[98%] self-center overflow-y-scroll"}>
           <article className={"prose lg:prose-xl mx-auto my-6"}>
-            <BlockRenderer blocks={blocks} />
+            {documentToReactComponents(description.json)}
           </article>
         </div>
       </div>

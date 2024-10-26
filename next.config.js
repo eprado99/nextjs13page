@@ -16,7 +16,13 @@ const nextConfig = {
                 hostname:'res.cloudinary.com',
                 port: '',
                 pathname: '/freshpm/image/upload/w_500/f_auto,q_auto/samples/bike.jpg',
-            }
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.ctfassets.net',
+                port: '',
+                pathname: '/**',
+            },
         ],
     },
 }

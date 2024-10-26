@@ -1,6 +1,5 @@
-import { getProjects } from "@/services/projectServices";
+import { getAllProjects, Project } from "@/services/projectServices";
 import ProjectCard from "../UI/ProjectCard/ProjectCard"
-import { Node } from "@/types/projectMetadataTypes"
 
 export const revalidate = 86400 // 1 day
 
@@ -9,12 +8,12 @@ interface ProjectListProps {
 }
 
 export default async function ProjectList({ classNames }: ProjectListProps) {
-    const projectMetadata = await getProjects();
-    const data = projectMetadata?.projects.nodes
+    const data = await getAllProjects();
+
     return (
         <div className={classNames}>
-           { data && data.map((post: Node) => {
-                return <ProjectCard key={post.id} {...post}/>
+           { data && data.map((project: Project) => {
+                return <ProjectCard key={project.title} {...project}/>
             })}
         </div>
     )

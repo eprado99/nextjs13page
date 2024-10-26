@@ -1,12 +1,12 @@
 import ProjectList from "@/components/ProjectList/ProjectList";
 import Heading from "@/components/UI/Heading/Heading";
-import { getProjects } from "@/services/projectServices";
+import { getAllProjects } from "@/services/projectServices";
 
 export const revalidate = 86400 // 1 day
 
 export default async function Page() {
-    const projectMetadata = await getProjects();
-    const data = projectMetadata?.projects.nodes
+    const projectMetadata = await getAllProjects();
+    const data = projectMetadata;
     
     return (
         <div className={"my-4"}>
