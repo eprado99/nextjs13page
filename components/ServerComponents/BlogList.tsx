@@ -1,12 +1,11 @@
-import { getBlogMetadata } from "@/services/blogServices"
 import BlogCard from "../UI/BlogCard/BlogCard";
 
 const BlogList = async () => {
-    const posts = await getBlogMetadata();
+    const posts: { id: string; [key: string]: any }[] = [];
     return (
         <>
         {
-            posts && posts.map((post) => {
+            posts && posts.map((post: any) => {
                 return (<BlogCard key={post.id}  {...post} />)
             })
         }
