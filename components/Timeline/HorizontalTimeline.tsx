@@ -19,7 +19,7 @@ export default function HorizontalTimeline({work}: TimelineProps){
     };
 
     return (
-        <div className={"xl:h-[100vh] 2xl:h-[80vh] flex"}>
+        <div className={"xl:h-[40vh] 2xl:h-[40vh] flex"}>
             <div className={"timeline-card-container"} onMouseMove={handleMouseMove} >
                 {
                     work.map((item: WorkExperience, index) => {
