@@ -16,6 +16,20 @@
   --scroll-end: calc(-100% - var(--gap));
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #FFFFFF;
@@ -141,17 +155,43 @@ body {
 }
 
 .timeline-expanded-container {
-  box-shadow: 0 0 0 100vmax #000;
-  clip-path: inset(0 -100vmax);
+  box-shadow: 0 0 0 50vmax #000;
+  clip-path: inset(0 -50vmax);
 }
 
 .timeline-card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   margin: 5rem auto;
-  max-width: 80vw;
-  max-height: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 640px) {
+  .timeline-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .timeline-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
 }
 
 .timeline-card-container:hover > .timeline-card::after {
@@ -163,18 +203,19 @@ body {
   border: 0px solid transparent;
   border-radius: 10px;
   cursor: pointer;
-  height: 380px;
-  width: 420px;
+  width: 100%;
+  min-height: 400px;
+  max-height: 400px;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
-  0 0 20px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease;
-  transition: transform 0.7s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+              0 0 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 
-              0 0 30px rgba(105, 180, 234, 0.6);
+  transform: translateY(-5px); /* Add a hover effect */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15),
+              0 0 25px rgba(0, 0, 0, 0.25);
 }
 
 .timeline-card:hover::before {
@@ -404,4 +445,41 @@ footer .border-bottom {
 .modern-card-scrollable-section::-webkit-scrollbar-thumb {
   background: #191919;
   border-radius: 6px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-align-center {
+  scroll-snap-align: center;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

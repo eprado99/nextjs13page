@@ -18,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -38,7 +41,7 @@ export default function RootLayout({
           gtag('config', '${GA_ID}');
         `}
       </Script>
-      <body className={`${manrope.variable} ${klee_one.variable} ${roboto_mono.variable} container mx-auto my-2 min-h-screen flex flex-col`}>
+      <body className={`${manrope.variable} ${klee_one.variable} ${roboto_mono.variable} mx-2 w-full my-2 min-h-screen flex flex-col`}>
         <Header items={defaultConfig.navBar}/>
         {children}
         <Analytics />

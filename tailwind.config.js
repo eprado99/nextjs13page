@@ -13,6 +13,9 @@ module.exports = {
         mono: ['var(--font-roboto-mono)'],
         kleeone: ['var(--font-klee-one)'],
       },
+      animation: {
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
   plugins: [
